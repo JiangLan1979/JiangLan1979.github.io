@@ -7,7 +7,7 @@ function begin(){
 	$('#debut').fadeIn(1000);	
 };
 // création de l'image papillon
-var papillon = $('<img class="papillon" src="img/papillon.gif" alt="papillon" title="来抓我 catch me"/>');
+var papillon = $('<img class="papillon" src="papillon.gif" alt="papillon" title="来抓我 catch me"/>');
 // fonction pour clic et changer élément actuel
 function clicToChange(btn1, btn2){
 	$(btn1).on('click', function (){
@@ -39,7 +39,7 @@ clicToNext('#sixemeClic', '#gift');
 // __________________ Personnaliser le dernier clic __________________
 
 // création de dernier papillon
-var papillonFin = $('<a href="#/"><img class="papillonFin" src="img/papillon.gif" alt="papillonFin" title="来抓我 catch me"/></a>');
+var papillonFin = $('<a href="#/"><img class="papillonFin" src="papillon.gif" alt="papillonFin" title="来抓我 catch me"/></a>');
 
 $('#gift').on('click', function (){
 	$('#fin').fadeIn().append(papillonFin);
