@@ -11,7 +11,7 @@ a{
 
 #container{
 	margin-bottom: 1em;
-	background: url("bgMotif.png") repeat-x;
+	background: url("img/bgMotif.png") repeat-x;
 	border: 1px solid #5075a1;
 	text-align: center;
 }
