@@ -55,5 +55,5 @@ $(papillonFin).on('click', function (){
 var $window = $(window);
 var windowSize = $window.width();
 if (windowSize > 600) {
-	$('iframe').css('width', '640').css('height', '480');
+	$('video').css('width', '640').css('height', '480');
 };
