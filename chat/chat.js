@@ -1,4 +1,5 @@
 $(function (){
+	jQuery.support.cors = true;
 	afficher();
 	function afficher (){
 		// charger la page htm
