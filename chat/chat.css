@@ -1,0 +1,97 @@
+body{
+	background-color: #f2f2f2;
+}
+
+#container{
+	width: 80%;
+	margin: 1em auto;
+	display: flex;
+	justify-content: center;
+}
+
+fieldset{
+	width: 500px;
+	height: 500px;
+	border: 1px solid grey;
+	background-color: #eeeedd;
+}
+
+#list_messages{
+	padding: 1em;
+	height: 390px;
+	border: 1px solid grey;
+	background-color: #f6f6ee;
+	overflow-x: hidden;
+	overflow-y: auto;
+	word-wrap: break-word;
+}
+
+#zone_input{
+	display: flex;
+	justify-content: space-between;
+	margin: 0.7em 0;
+}
+
+input{
+	font-size: 0.8em;
+}
+
+img[alt="send"]{
+	width: 1.6em;
+}
+
+.ligne{
+	margin-bottom: 0.5em;
+}
+
+.nom{
+	color: green;
+}
+
+.message{
+	width: 500px;
+	word-wrap: break-word;
+}
+
+/*===================================================
+responsive tablette et téléphone portable
+===================================================*/
+
+@media all and (max-width: 991px){
+
+	body{
+		background-color: #eeeedd;
+	}
+
+	#container{
+		margin: 2em auto;
+		width: 100%;
+	}
+
+	fieldset{
+		border: none;
+		width: 100%;
+	}
+
+	legend{
+		font-size: 2.5em;
+	}
+
+	#list_messages{
+		height: 1450px;
+		font-size: 1em;
+	}
+
+	#zone_input{
+		margin: 1.8em 0;
+	}
+
+	input{
+		font-size: 1.6em;
+	}
+
+	img[alt="send"]{
+		width: 3em;
+	}
+
+}
