@@ -10,10 +10,10 @@ $(function (){
 		var nom = $('#nom').val();
 		var message = $('#message').val();
 		$.post(
-				'chat.php',
-				{'nom' : nom, 'message' : message},
-				afficher
-			  );
+			'chat.php',
+			{'nom' : nom, 'message' : message},
+			afficher
+		       );
 		$('#message').val('').focus();
 	}
 
