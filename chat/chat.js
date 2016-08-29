@@ -1,5 +1,4 @@
 $(function (){
-	jQuery.support.cors = true;
 	afficher();
 	function afficher (){
 		// charger la page htm
@@ -11,7 +10,7 @@ $(function (){
 		var nom = $('#nom').val();
 		var message = $('#message').val();
 		$.post(
-				'chat.php',
+				'https://jianglan1979.github.io/chat/chat.php',
 				{'nom' : nom, 'message' : message},
 				afficher
 			  );
