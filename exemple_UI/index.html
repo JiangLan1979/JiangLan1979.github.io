@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+	<title>exemple UI</title>
+	<style>
+		#container{
+			width: 80%;
+			margin: 2em auto;
+		}
+		#onglet-1,#onglet-7{
+			text-align: center;
+			padding: 5em 0;
+		}
+		h1{
+			color: grey;
+		}
+		.img_size{
+			width: 70%;
+			display: block;
+			margin: auto;
+		}
+		.hover_size{
+			padding: 1em;
+			width: 20%;
+		}
+		fieldset{
+			border: 1px solid grey;
+		}
+		legend{
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="onglets">
+		  <ul>
+		    <li><a href="#onglet-1">Introduction</a></li>
+		    <li><a href="#onglet-2">Etape 1</a></li>
+		    <li><a href="#onglet-3">Etape 2</a></li>
+		    <li><a href="#onglet-4">Etape 3</a></li>
+		    <li><a href="#onglet-5">Etape 4</a></li>
+		    <li><a href="#onglet-6">Etape 5</a></li>
+		    <li><a href="#onglet-7">Etape 6</a></li>
+		  </ul>
+		  <div id="onglet-1">
+		  	<h1>* Bienvenu *</h1>
+		  	<div>dans</div>
+			<p>l'exemple concret : la procédure pour construire mon site personnel</p>
+			<div>sur la partie</div>
+			<p>
+				Interface d'Utilisateur</br>(<font color="red">UI</font>-<font color="red">U</font>ser <font color="red">I</font>nterface)
+			</p>
+		  </div>
+
+		  <div id="onglet-2">
+		  	<fieldset>
+		  		<legend>1er croquis (plus la conception de zone cliquable)</legend>
+		  		<a href="premier_croquis.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="premier_croquis.png" alt="premier_croquis"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		  <div id="onglet-3">
+		  	<fieldset>
+		  		<legend>le dessin selon le 1er croquis</legend>
+		  		<a href="dessin.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="dessin.png" alt="dessin"/>
+		  		</a>
+		  	</fieldset>		
+		  </div>
+
+		  <div id="onglet-4">
+		  	<fieldset>
+		  		<legend>colorer par photoshop et mettre en noir et blanc (avec l'animation "fumé")</legend>
+		  		<a href="dessin_bk_anime.gif" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="dessin_bk_anime.gif" alt="dessin_bk_anime"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		  <div id="onglet-5">
+		  	<fieldset>
+		  		<legend>le dessin en couleur</legend>
+		  		<a href="dessin_color.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="dessin_color.png" alt="dessin_color"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		  <div id="onglet-6">
+		  	<fieldset>
+		  		<legend>le dessin avec les effects de lumière</legend>
+		  		<a href="dessin_final.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="dessin_final.png" alt="dessin_final"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		  <div id="onglet-7">
+	  		<h1>l'intégration</h1>
+			<p>HTML</p>
+			<p>CSS</p>
+			<p>JavaScript( jQuery )</p>
+			<a href="http://www.littlecode.ymcdesign.com/" target="_blank">* visiter mon site personnel *</a>
+		  </div>
+
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"
+			integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+			crossorigin="anonymous">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<script>
+		$(function (){
+			$('#onglets').tabs();
+		});
+	</script>
+</body>
+</html>
