@@ -31,12 +31,38 @@
 		legend{
 			font-weight: bold;
 		}
+		#lang{
+			position: relative;
+			float: right;
+			display: inline-block;
+			padding: 0.5em 1em;
+		}
+		#lang img{
+			width: 1.1em;
+		}
+		#blogLangList{
+			padding-left: 0;
+			display: block;
+			background-color: white;
+			border: 1px solid lightgrey;
+			position: absolute;
+			border-radius: 5px;
+			right: 0;
+			top: 0;
+		}
+		#blogLangList li{
+			transition: background-color 0.2s linear;
+			margin: 0;
+		}
+		#blogLangList li:hover{
+			background-color: #f2f2f2;
+		}
 	</style>
 </head>
 <body>
 	<div id="container">
 		<div id="onglets">
-		  <ul>
+		  <ul id="title">
 		    <li><a href="#onglet-1">Introduction</a></li>
 		    <li><a href="#onglet-2">Etape 1</a></li>
 		    <li><a href="#onglet-3">Etape 2</a></li>
@@ -44,6 +70,8 @@
 		    <li><a href="#onglet-5">Etape 4</a></li>
 		    <li><a href="#onglet-6">Etape 5</a></li>
 		    <li><a href="#onglet-7">Etape 6</a></li>
+		    <a id="lang" href="#/"><img src="fr.png" title="langue" alt="fr"/></a>
+
 		  </ul>
 		  <div id="onglet-1">
 		  	<h1>* Bienvenue *</h1>
@@ -119,6 +147,127 @@
 	<script>
 		$(function (){
 			$('#onglets').tabs();
+
+			var dict = {
+			    fr: {
+			    	flag : 'fr.png',
+			        onglets : ['Introduction',
+			        			'Etape 1',
+			        			'Etape 2',
+			        			'Etape 3',
+			        			'Etape 4',
+			        			'Etape 5',
+			        			'Etape 6'],
+			        onglet_un : '<h1>* Bienvenue *</h1><div>dans</div><p>l\'exemple concret : la procédure pour construire mon site personnel</p><div>sur la partie</div><p>Interface d\'Utilisateur</br>(<font color="red">UI</font>-<font color="red">U</font>ser <font color="red">I</font>nterface)</p>',
+			        onglet_deux : '1er croquis (plus la conception de zone cliquable)',
+			        onglet_trois : 'le dessin selon le 1er croquis',
+			        onglet_quatre : 'colorer par photoshop et mettre en noir et blanc (avec l\'animation "fumé")',
+			        onglet_cinq : 'le dessin en couleur',
+			        onglet_six : 'le dessin avec les effects de lumière',
+			        onglet_sept : '<h1>l\'intégration</h1><p>HTML</p><p>CSS</p><p>JavaScript( jQuery )</p><a href="http://www.littlecode.ymcdesign.com/" target="_blank">* visiter mon site personnel *</a>'
+			    },
+			    en: {
+			    	flag : 'en.png',
+			        onglets : ['Introduce',
+			        			'step 1',
+			        			'step 2',
+			        			'step 3',
+			        			'step 4',
+			        			'step 5',
+			        			'step 6'],
+			        onglet_un : '<h1>* Welcome *</h1><div>to</div><p>concret example : the construction process of my personal website</p><div>on the part of</div><p><font color="red">UI</font>-<font color="red">U</font>ser <font color="red">I</font>nterface</p>',
+			        onglet_deux : 'first sketch (with the click zone conception)',
+			        onglet_trois : 'the drawing according the first sketch',
+			        onglet_quatre : 'colour by photoshop and change into black and white (with the little "smoke" animation)',
+			        onglet_cinq : 'the drawing with colour',
+			        onglet_six : 'the drawing with the light and shadow',
+			        onglet_sept : '<h1>Integration</h1><p>HTML</p><p>CSS</p><p>JavaScript( jQuery )</p><a href="http://www.littlecode.ymcdesign.com/" target="_blank">* visit my personal website *</a>'
+			    },
+			    中文: {
+			    	flag : '中文.png',
+			        onglets : ['介绍',
+			        			'第一步',
+			        			'第二步',
+			        			'第三步',
+			        			'第四步',
+			        			'第五步',
+			        			'第六步'],
+			        onglet_un : '<h1>* 欢迎 *</h1><div>来到</div><p>具体实例 : 我的个人网站制作过程</p><div>基于</div><p>用户界面<br/><font color="red">(UI</font>-<font color="red">U</font>ser <font color="red">I</font>nterface)</p>',
+			        onglet_deux : '初步草图 (配上按钮位置规划)',
+			        onglet_trois : '根据草图画成正稿',
+			        onglet_quatre : '用photoshop上色后变成黑白效果 (配上“冒热气”的小动画)',
+			        onglet_cinq : '彩色正稿',
+			        onglet_six : '加上光影效果',
+			        onglet_sept : '<h1>写成网页模式</h1><p>HTML</p><p>CSS</p><p>JavaScript( jQuery )</p><a href="http://www.littlecode.ymcdesign.com/" target="_blank">* 访问我的个人网站 *</a>'
+			    }
+			};
+
+			// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			// function qui permettre de changer index d'élément dans un tableau
+			Array.prototype.move = function (old_index, new_index) {
+			    if (new_index >= this.length) {
+			        var k = new_index - this.length;
+			        while ((k--) + 1) {
+			            this.push(undefined);
+			        }
+			    }
+			    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+			    return this; // for testing purposes
+			};
+			// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var langTableau = ['fr', 'en', '中文'];
+			// click sur le boutton langue
+			$('#lang').click(function (){
+
+				var langList = $('<ul id="blogLangList"></ul>');
+				// afficher la list de langue
+				langTableau.forEach(function (el){
+					var list = '<li title="' + el + '"><a id="lang" href="#/"><img src="' + el + '.png" alt="' + el + '"/></a></li></br>';
+					langList.append(list);
+				});
+				$(this).append(langList);
+				// click en dehor de list de langue pour enlever la list
+				$(document).mouseup(function (e){
+				    if (!langList.is(e.target) // if the target of the click isn't the langList...
+				        && langList.has(e.target).length === 0) // nor a descendant of the langList
+				    {
+				        langList.remove();
+				    }
+				});
+
+				$('#blogLangList li').click(function (){
+
+					var selected = $(this).attr('title');
+					var old_index = langTableau.indexOf(selected);
+					
+					if (old_index !== 0) {
+						// mettre le drapeau selectionné à la 1ère place de tableau
+						langTableau.move(old_index, 0);
+					};
+					changeLang(selected);
+				});
+
+			});
+			// function pour afficher les texte selon le langue choisi
+			function changeLang (el){
+				var onglet = $('li a');
+
+				for (var i = 0; i < onglet.length; i++) {
+					// utilise [] pour acceder le propriété d'objet
+					onglet.eq(i).html(dict[el].onglets[i]);
+				};
+				$('#onglet-1').html(dict[el].onglet_un);
+				$('#onglet-2 fieldset legend').html(dict[el].onglet_deux);
+				$('#onglet-3 fieldset legend').html(dict[el].onglet_trois);
+				$('#onglet-4 fieldset legend').html(dict[el].onglet_quatre);
+				$('#onglet-5 fieldset legend').html(dict[el].onglet_cinq);
+				$('#onglet-6 fieldset legend').html(dict[el].onglet_six);
+				$('#onglet-7').html(dict[el].onglet_sept);
+				// modifier le drapeau de langue 
+				$('#lang img').attr({'src': el + '.png', 'title': el, 'alt': el });
+			};
+
 		});
 	</script>
 </body>
