@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+	<title>exemple design</title>
+	<style>
+		#container{
+			width: 80%;
+			margin: 2em auto;
+		}
+		#onglet-1,#onglet-7{
+			text-align: center;
+			padding: 5em 0;
+		}
+		h1{
+			color: grey;
+		}
+		.img_size{
+			border: 1px solid lightgrey;
+			box-shadow: 0 0 1em lightgrey;
+			width: 70%;
+			display: block;
+			margin: 1em auto;
+		}
+		.img_portrait_size{
+			border: 1px solid lightgrey;
+			box-shadow: 0 0 1em lightgrey;
+			width: 30%;
+			/*display: block;*/
+			margin: 1em;
+		}
+		.hover_size{
+			padding: 1em;
+			width: 20%;
+		}
+		fieldset{
+			border: 1px solid grey;
+		}
+		legend{
+			font-weight: bold;
+		}
+		#lang{
+			position: relative;
+			float: right;
+			display: inline-block;
+			padding: 0.5em 1em;
+		}
+		#lang img{
+			width: 1.1em;
+		}
+		#blogLangList{
+			padding-left: 0;
+			display: block;
+			background-color: white;
+			border: 1px solid lightgrey;
+			position: absolute;
+			border-radius: 5px;
+			right: 0;
+			top: 0;
+		}
+		#blogLangList li{
+			transition: background-color 0.2s linear;
+			margin: 0;
+		}
+		#blogLangList li:hover{
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="onglets">
+		  <ul id="title">
+		    <li><a href="#onglet-1">Introduction</a></li>
+		    <li><a href="#onglet-2">01-CD</a></li>
+		    <li><a href="#onglet-3">02-catalogue</a></li>
+		    <li><a href="#onglet-4">03-livre</a></li>
+		    <li><a href="#onglet-5">04-flyer</a></li>
+		    <a id="lang" href="#/"><img src="fr.png" title="langue" alt="fr"/></a>
+
+		  </ul>
+		  <div id="onglet-1">
+		  	<h1>* Bienvenue *</h1>
+		  	<div>dans</div>
+			<p>Quelque exemples du design</p>
+			<div>sur</div>
+			<p>Mise en page</p>
+		  </div>
+
+		  <div id="onglet-2">
+		  	<fieldset>
+		  		<legend>conception pour un l'emballage d'un CD</legend>
+		  		<a href="cd_1.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_1.png" alt="cd_1"/>
+		  		</a>
+		  		<a href="cd_2.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_2.png" alt="cd_2"/>
+		  		</a>
+		  		<a href="cd_3.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_3.png" alt="cd_3"/>
+		  		</a>
+		  		<a href="cd_4.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_4.png" alt="cd_4"/>
+		  		</a>
+		  		<a href="cd_5.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_5.png" alt="cd_5"/>
+		  		</a>
+		  		<a href="cd_6.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_6.png" alt="cd_6"/>
+		  		</a>
+		  		<a href="cd_7.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="cd_7.png" alt="cd_7"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		  <div id="onglet-3">
+		  	<fieldset>
+		  		<legend>catalogue "CV" dépliant</legend>
+		  		<a href="catalog-recto.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="catalog-recto.png" alt="catalog-recto"/>
+		  		</a>
+		  		<a href="catalog-verso.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="catalog-verso.png" alt="catalog-verso"/>
+		  		</a>
+		  		<a href="catalog.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_size" src="catalog.png" alt="catalog"/>
+		  		</a>
+		  	</fieldset>		
+		  </div>
+
+		  <div id="onglet-4">
+		  	<fieldset>
+		  		<legend>couvertue du livre</legend>
+		  		<a href="main croquis.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_portrait_size" src="main croquis.png" alt="main croquis"/>
+		  		</a>
+		  		<a href="main couleur.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_portrait_size" src="main couleur.png" alt="main couleur"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		  <div id="onglet-5">
+		  	<fieldset>
+		  		<legend>flyer</legend>
+		  		<a href="ecole Forma-centre.png" target="_blank" title="clic pour zoomer">
+		  			<img class="img_portrait_size" src="ecole Forma-centre.png" alt="ecole Forma-centre"/>
+		  		</a>
+		  	</fieldset>
+		  </div>
+
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"
+			integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+			crossorigin="anonymous">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<script>
+		$(function (){
+			$('#onglets').tabs();
+
+			var dict = {
+			    fr: {
+			    	flag : 'fr.png',
+			        onglets : ['Introduction',
+			        			'01-CD',
+			        			'02-catalogue',
+			        			'03-livre',
+			        			'04-flyer'],
+			        onglet_un : '<h1>* Bienvenue *</h1><div>dans</div><p>Quelque exemples du design</p><div>sur</div><p>Mise en page</p>',
+			        onglet_deux : 'conception pour un l\'emballage d\'un CD',
+			        onglet_trois : 'catalogue "CV" dépliant',
+			        onglet_quatre : 'couvertue du livre',
+			        onglet_cinq : 'flyer'
+			    },
+			    en: {
+			    	flag : 'en.png',
+			        onglets : ['Introduce',
+			        			'01-CD',
+			        			'02-catalog',
+			        			'03-book',
+			        			'04-flyer'],
+			        onglet_un : '<h1>* Welcome *</h1><div>to</div><p>Some examples</p><div>of</div><p>Type setting design</p>',
+			        onglet_deux : 'conception for a CD\'s package',
+			        onglet_trois : 'catalog "resume" folder',
+			        onglet_quatre : 'book\'s cover',
+			        onglet_cinq : 'flyer'
+			    },
+			    中文: {
+			    	flag : '中文.png',
+			        onglets : ['介绍',
+			        			'01-CD',
+			        			'02-简介',
+			        			'03-封面',
+			        			'04-传单'],
+			        onglet_un : '<h1>* 欢迎 *</h1><div>来到</div><p>几个设计方案</p><div>基于</div><p>排版设计</p>',
+			        onglet_deux : 'CD包装设计方案',
+			        onglet_trois : '个人“简历”折页',
+			        onglet_quatre : '书籍封面',
+			        onglet_cinq : '传单'
+			    }
+			};
+
+			// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			// function qui permettre de changer index d'élément dans un tableau
+			Array.prototype.move = function (old_index, new_index) {
+			    if (new_index >= this.length) {
+			        var k = new_index - this.length;
+			        while ((k--) + 1) {
+			            this.push(undefined);
+			        }
+			    }
+			    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+			    return this; // for testing purposes
+			};
+			// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var langTableau = ['fr', 'en', '中文'];
+			// click sur le boutton langue
+			$('#lang').click(function (){
+
+				var langList = $('<ul id="blogLangList"></ul>');
+				// afficher la list de langue
+				langTableau.forEach(function (el){
+					var list = '<li title="' + el + '"><a id="lang" href="#/"><img src="' + el + '.png" alt="' + el + '"/></a></li></br>';
+					langList.append(list);
+				});
+				$(this).append(langList);
+				// click en dehor de list de langue pour enlever la list
+				$(document).mouseup(function (e){
+				    if (!langList.is(e.target) // if the target of the click isn't the langList...
+				        && langList.has(e.target).length === 0) // nor a descendant of the langList
+				    {
+				        langList.remove();
+				    }
+				});
+				// click pour choisir une langue
+				$('#blogLangList li').click(function (){
+
+					var selected = $(this).attr('title');
+					var old_index = langTableau.indexOf(selected);
+					// si le drapeau selectionné n'est pas le 1er élément du tableau
+					if (old_index !== 0) {
+						// mettre le drapeau selectionné à la 1ère place du tableau
+						langTableau.move(old_index, 0);
+					};
+					changeLang(selected);
+				});
+
+			});
+			// function pour afficher les texte selon la langue choisie
+			function changeLang (el){
+				var onglet = $('li a');
+
+				for (var i = 0; i < onglet.length; i++) {
+					// utilise [] pour acceder le propriété d'objet
+					onglet.eq(i).html(dict[el].onglets[i]);
+				};
+				$('#onglet-1').html(dict[el].onglet_un);
+				$('#onglet-2 fieldset legend').html(dict[el].onglet_deux);
+				$('#onglet-3 fieldset legend').html(dict[el].onglet_trois);
+				$('#onglet-4 fieldset legend').html(dict[el].onglet_quatre);
+				$('#onglet-5 fieldset legend').html(dict[el].onglet_cinq);
+				$('#onglet-6 fieldset legend').html(dict[el].onglet_six);
+				$('#onglet-7').html(dict[el].onglet_sept);
+				// modifier le drapeau de langue 
+				$('#lang img').attr({'src': el + '.png', 'title': el, 'alt': el });
+			};
+
+		});
+	</script>
+</body>
+</html>
