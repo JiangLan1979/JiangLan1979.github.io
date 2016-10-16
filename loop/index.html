@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Loop</title>
+	<style type="text/css">
+		#loop{
+			width: 300px;
+			height: 300px;
+			background: url('0.png');
+		}
+		h1{
+			padding-top: 310px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="loop">
+		<h1>Cat</h1>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"
+			integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+			crossorigin="anonymous">
+	</script>
+	<script>
+		$(function (){
+			var i = 0;
+			var name = ['Cat', 'Dog', 'Duck'];
+
+			function next(){
+				if (i > 1) {
+					i = 0;
+				}else{
+					i++;
+				};
+				$('#loop').fadeOut(1000, function (){
+					$(this).css('background', 'url("'+ i +'.png")').fadeIn(1000);
+					$('h1').html(name[i]);
+				});
+			};
+			setInterval(next, 3000);
+		});
+	</script>
+</body>
+
+
+</html>
