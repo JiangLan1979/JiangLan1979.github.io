@@ -25,25 +25,27 @@
 			integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
 			crossorigin="anonymous">
 	</script>
-	<script>
-		$(function (){
-			var i = 0;
-			var name = ['Cat', 'Dog', 'Duck'];
+<script>
+    $(function (){
+        var i = 0;
+        var name = ['Cat', 'Dog', 'Duck'];
 
-			function next(){
-				if (i > 1) {
-					i = 0;
-				}else{
-					i++;
-				};
-				$('#loop').fadeOut(1000, function (){
-					$(this).css('background', 'url("'+ i +'.png")').fadeIn(1000);
-					$('h1').html(name[i]);
-				});
-			};
-			setInterval(next, 3000);
-		});
-	</script>
+        var timerId = setTimeout(next, 3000);
+        function next(){
+            if (i > 1) {
+                i = 0;
+            }else{
+                i++;
+            };
+            $('#loop').fadeOut(1000, function (){
+                $(this).css('background', 'url("'+ i +'.png")').fadeIn(1000);
+                $('h1').html(name[i]);
+                timerId = setTimeout(next, 3000);
+            });
+        };
+
+    });
+</script>
 </body>
 
 
