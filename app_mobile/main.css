@@ -1,0 +1,85 @@
+.entete{
+	width: 40%;
+	margin: 1em auto;
+}
+
+img[alt="order_header"]{
+	width: 100%;
+}
+
+.presentation{
+	font-size: 1.2em;
+	line-height: 2em;
+}
+
+hr{
+	border-color: #ffffff;
+}
+
+.formulaire{
+	width: 35%;
+	margin: 0 auto;
+}
+
+.ui-controlgroup-label{
+	margin: 0!important;
+}
+
+legend{
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 0.5em 0.5em 0.5em 0;
+}
+
+.ui-field-contain{
+	margin: 0!important;
+	padding: 1em 0;
+}
+
+.alert{
+	font-size: 0.8em;
+	color: red;
+}
+
+.ui-input-btn{
+	color: #2db300!important;
+	float: right;
+	width: 50%;
+}
+
+.footer{
+	color: grey;
+	font-size: 0.8em!important;
+}
+
+/*===================================================
+responsive tablette
+===================================================*/
+@media all and (max-width: 900px){
+
+	.entete{
+		width: 100%;
+	}
+
+	.presentation{
+		font-size: 0.8em;
+		padding: 0;
+		line-height: 1.8em;
+	}
+
+	.formulaire{
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.ui-field-contain{
+		padding: 1em 0!important;
+	}
+
+/*===================================================
+class à utiliser
+===================================================*/
+
+
+
+}
