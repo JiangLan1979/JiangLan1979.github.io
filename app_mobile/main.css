@@ -3,6 +3,15 @@
 	margin: 1em auto;
 }
 
+.banner{
+	color: grey;
+	background-color: #f2f2f2;
+	text-align: center;
+	padding: 0.5em;
+	font-size: 1em!important;
+}
+
+
 img[alt="order_header"]{
 	width: 100%;
 }
@@ -47,10 +56,16 @@ legend{
 	width: 50%;
 }
 
-.footer{
-	color: grey;
-	font-size: 0.8em!important;
+#myPopup span, #myPopup blockquote{
+	color: #0099e6;
 }
+
+blockquote{
+	margin: 0;
+	padding-left: 1em;
+	border-left: 2px solid lightgrey;
+}
+
 
 /*===================================================
 responsive tablette
@@ -74,6 +89,10 @@ responsive tablette
 
 	.ui-field-contain{
 		padding: 1em 0!important;
+	}
+
+	.apercu{
+		font-size: 1em;
 	}
 
 /*===================================================
