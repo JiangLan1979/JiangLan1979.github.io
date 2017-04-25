@@ -14,6 +14,7 @@
 	<title>法国春天百货-预约</title>
 </head>
 <body>
+	<div class="banner">法国春天奥斯曼总店中文导购</div>
 	<div data-role="header">
 		<div class="entete">
 			<img src="order_header.png" alt="order_header"/>
@@ -33,9 +34,9 @@
 					<fieldset data-role="controlgroup" data-type="horizontal">
 						<legend>称呼 : </legend>
 						<label for="femme">女士</label>
-						<input type="radio" name="sex" id="femme" value="femme">
+						<input type="radio" name="sex" id="femme" value="女士">
 						<label for="homme">先生</label>
-						<input type="radio" name="sex" id="homme" value="homme" checked>
+						<input type="radio" name="sex" id="homme" value="先生" checked>
 					</fieldset>
 
 					<!-- <label for="nom"><span class="alert"> * </span>姓 : </label> -->
@@ -132,15 +133,31 @@
 						</label>
 					</fieldset>
 				</div>
+
+				<!-- popup -->
+				<a href="#myPopup" data-rel="popup" class="ui-btn ui-input-btn ui-corner-all ui-shadow">检查一下</a>
+
+				<div data-role="popup" id="myPopup" class="ui-content">
+					<h3>您填写的信息预览 ：</h3>
+					<p>称呼 : <span class="nom"></span><span class="prenom"></span><span class="sex"></span></p>
+					<p>电话 : <span class="pays"></span><span class="telephone"></span></p>
+					<p>邮箱 : <span class="email"></span></p>
+					<p>预约日期时间 : <blockquote><span class="date"></span> <span class="temps"></span></blockquote></p>
+					<p>寻找产品类型 : <blockquote class="produit_type"></blockquote></p>
+				</div>
+				<!-- fin popup -->
+
 				<input type="submit" value="确认提交">
 			</form>
 		</div> <!-- fin main ui-content -->
 	</div> <!-- fin formulaire -->
-	<br>
+	<br><br>
 
-	<div data-role="footer">
-		<h2 class="footer">法国春天奥斯曼总店中文导购团队</h2>
-	</div>
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"
+			integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+			crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="main.js"></script>
 
 
 
